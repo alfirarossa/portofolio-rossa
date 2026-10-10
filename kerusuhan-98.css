@@ -1,0 +1,506 @@
+
+:root {
+    --bg: #170f2e;
+    --bg-soft: #21163b;
+    --card: rgba(43, 29, 69, 0.82);
+    --gold: #f2cc70;
+    --gold-light: #ffe8a6;
+    --cream: #f8f0df;
+    --muted: #c4b7d6;
+    --border: rgba(242, 204, 112, 0.25);
+    --font-heading: "Almendra Display", Georgia, serif;
+    --font-body: "Poppins", sans-serif;
+}
+
+/* RESET */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    color: var(--cream);
+    background:
+        radial-gradient(
+            ellipse at 10% 10%,
+            rgba(128, 83, 170, 0.17),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 90% 45%,
+            rgba(242, 204, 112, 0.08),
+            transparent 35%
+        ),
+        var(--bg);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* PROGRES MEMBACA */
+.reading-progress {
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 1001;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), #d8a8ff);
+    box-shadow: 0 0 12px rgba(242, 204, 112, 0.65);
+}
+
+/* HEADER DAN NAVIGASI */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+    background: rgba(23, 15, 46, 0.88);
+    backdrop-filter: blur(16px);
+}
+
+.nav {
+    position: relative;
+    width: min(1120px, 92%);
+    min-height: 72px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.brand {
+    color: var(--gold);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.82rem;
+}
+
+.nav-links a {
+    color: var(--muted);
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--gold);
+}
+
+.menu-toggle {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 7px 11px;
+    color: var(--gold);
+    background: transparent;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    width: min(1000px, 90%);
+    margin: auto;
+    padding: 76px 0 52px;
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 5px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--gold-light);
+    background: rgba(242, 204, 112, 0.06);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+}
+
+.hero h1 {
+    margin: 0;
+    color: var(--gold-light);
+    font-size: clamp(3rem, 9vw, 6.3rem);
+    line-height: 1.05;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: 20px auto 0;
+    color: var(--muted);
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.meta-chip {
+    padding: 7px 13px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--cream);
+    background: rgba(255, 255, 255, 0.035);
+    font-size: 0.78rem;
+}
+
+/* LAYOUT HALAMAN */
+.page-layout {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 26px;
+    width: min(1120px, 92%);
+    margin: 0 auto 70px;
+    align-items: start;
+}
+
+/* DAFTAR ADEGAN */
+.sidebar {
+    position: sticky;
+    top: 96px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--card);
+}
+
+.sidebar h2 {
+    margin: 0 0 12px;
+    color: var(--gold);
+    font-size: 1.5rem;
+}
+
+.sidebar p {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.sidebar a {
+    display: block;
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-radius: 9px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    transition: 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a:focus-visible {
+    color: var(--gold-light);
+    background: rgba(242, 204, 112, 0.08);
+}
+
+/* NASKAH */
+.manuscript {
+    min-width: 0;
+    padding: clamp(20px, 4vw, 44px);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: linear-gradient(
+        145deg,
+        rgba(43, 29, 69, 0.94),
+        rgba(30, 20, 49, 0.96)
+    );
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+}
+
+.manuscript-heading {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.manuscript-heading h2 {
+    margin: 0;
+    color: var(--gold-light);
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    line-height: 1.2;
+}
+
+.manuscript-heading p {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+/* ADEGAN */
+.scene {
+    margin-top: 38px;
+    scroll-margin-top: 100px;
+}
+
+.scene:first-of-type {
+    margin-top: 0;
+}
+
+.scene-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 22px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--gold);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.scene-title::before {
+    content: "";
+    width: 5px;
+    height: 30px;
+    flex: 0 0 auto;
+    border-radius: 5px;
+    background: var(--gold);
+}
+
+.setting {
+    margin: 0 0 18px;
+    padding: 13px 16px;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    color: var(--gold-light);
+    background: rgba(242, 204, 112, 0.065);
+    font-size: 0.9rem;
+}
+
+/* DIALOG */
+.script-line {
+    display: grid;
+    grid-template-columns: minmax(105px, 155px) minmax(0, 1fr);
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.speaker {
+    color: var(--gold-light);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.dialogue {
+    min-width: 0;
+    color: var(--cream);
+    overflow-wrap: anywhere;
+}
+
+/* PETUNJUK PANGGUNG */
+.stage-direction {
+    margin: 15px 0;
+    padding: 12px 16px;
+    border: 1px dashed rgba(216, 168, 255, 0.28);
+    border-radius: 10px;
+    color: #d7c7eb;
+    background: rgba(216, 168, 255, 0.045);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* CATATAN GEGURITAN */
+.poem-note {
+    margin: 18px 0;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--gold-light);
+    background: rgba(242, 204, 112, 0.05);
+    text-align: center;
+}
+
+/* AKHIR NASKAH */
+.end-note {
+    margin-top: 42px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    color: var(--muted);
+    background: rgba(242, 204, 112, 0.04);
+    text-align: center;
+}
+
+.end-note strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+/* FOOTER */
+.page-footer {
+    padding: 28px 5%;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--gold-light);
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.page-footer p {
+    margin: 0;
+}
+
+/* TOMBOL KEMBALI KE ATAS */
+.back-top {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 900;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--bg);
+    background: var(--gold);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: 0.2s ease;
+}
+
+.back-top:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+.back-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE: TABLET DAN HP */
+@media (max-width: 760px) {
+    .nav {
+        min-height: 66px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 66px;
+        left: 0;
+        right: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 5% 16px;
+        border-bottom: 1px solid var(--border);
+        background: rgba(23, 15, 46, 0.98);
+    }
+
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+    }
+
+    .hero {
+        padding-top: 55px;
+    }
+
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .sidebar-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2px 10px;
+    }
+
+    .script-line {
+        grid-template-columns: 1fr;
+        gap: 2px;
+        padding: 12px 0;
+    }
+
+    .speaker {
+        font-size: 0.82rem;
+    }
+
+    .manuscript {
+        padding: 22px 18px;
+    }
+}
+
+/* AKSESIBILITAS */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

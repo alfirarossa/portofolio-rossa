@@ -1,0 +1,354 @@
+
+:root {
+    --purple-dark: #21152f;
+    --purple-main: #39234c;
+    --purple-light: #67467c;
+    --gold: #e9c875;
+    --gold-light: #f7e8b3;
+    --cream: #fff8e9;
+    --muted: #d4c8dc;
+    --glass: rgba(255, 255, 255, 0.055);
+    --glass-border: rgba(233, 200, 117, 0.22);
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--cream);
+    background:
+        radial-gradient(
+            circle at 8% 5%,
+            rgba(103, 70, 124, 0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 95% 55%,
+            rgba(103, 70, 124, 0.18),
+            transparent 30%
+        ),
+        var(--purple-dark);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.85;
+}
+
+a {
+    color: var(--gold-light);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+.container {
+    width: min(900px, 90%);
+    margin-inline: auto;
+}
+
+/* NAVIGATION */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(33, 21, 47, 0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-inner {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand {
+    color: var(--gold-light);
+    font-family: "Almendra Display", serif;
+    font-size: 1.45rem;
+    text-decoration: none;
+}
+
+.back-link {
+    padding: 8px 14px;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    color: var(--gold-light);
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.back-link:hover {
+    color: var(--purple-dark);
+    background: var(--gold);
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 78px 0 48px;
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 7px 14px;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    color: var(--gold-light);
+    background: var(--glass);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin: 24px auto 20px;
+    color: var(--gold-light);
+    font-family: "Almendra Display", serif;
+    font-size: clamp(2.5rem, 6vw, 4.6rem);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.hero h1 span {
+    color: var(--cream);
+}
+
+.subtitle {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.byline {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.byline strong {
+    color: var(--cream);
+    font-weight: 500;
+}
+
+.ornament {
+    margin-top: 25px;
+    color: var(--gold);
+    letter-spacing: 0.5em;
+}
+
+/* ARTICLE */
+.article-section {
+    padding-bottom: 85px;
+}
+
+.article-card {
+    padding: clamp(24px, 5vw, 55px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.035);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.article-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    color: var(--gold);
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.article-label::before {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.article-card p {
+    margin-bottom: 24px;
+    color: #eee5f1;
+    font-size: 0.96rem;
+    text-align: justify;
+    overflow-wrap: anywhere;
+}
+
+.article-card p:last-of-type {
+    margin-bottom: 0;
+}
+
+.article-card p:first-of-type::first-letter {
+    float: left;
+    margin: 5px 10px 0 0;
+    color: var(--gold-light);
+    font-family: "Almendra Display", serif;
+    font-size: 3.6rem;
+    line-height: 0.85;
+}
+
+/* KUTIPAN */
+.featured-quote {
+    margin: 35px 0;
+    padding: 25px 28px;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 16px 16px 0;
+    background: rgba(233, 200, 117, 0.07);
+}
+
+.featured-quote .quote-mark {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-family: "Almendra Display", serif;
+    font-size: 2.6rem;
+    line-height: 1;
+}
+
+.featured-quote blockquote {
+    color: var(--gold-light);
+    font-family: "Almendra Display", serif;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    line-height: 1.55;
+}
+
+/* PENUTUP ESAI */
+.closing-note {
+    margin-top: 38px;
+    padding-top: 25px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.closing-note p {
+    margin-bottom: 0;
+    color: var(--gold-light);
+    font-family: "Almendra Display", serif;
+    font-size: 1.35rem;
+    text-align: left;
+}
+
+/* NAVIGATION BAWAH */
+.bottom-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.bottom-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 17px;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    color: var(--gold-light);
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.bottom-nav a:hover {
+    color: var(--purple-dark);
+    background: var(--gold);
+}
+
+/* FOOTER */
+.footer {
+    padding: 25px 0;
+    border-top: 1px solid var(--glass-border);
+    text-align: center;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.footer span {
+    color: var(--gold-light);
+}
+
+/* RESPONSIVE: TABLET DAN HP */
+@media (max-width: 600px) {
+    .nav-inner {
+        min-height: 65px;
+        gap: 10px;
+    }
+
+    .brand {
+        font-size: 1.15rem;
+    }
+
+    .back-link {
+        padding: 7px 10px;
+        font-size: 0.72rem;
+    }
+
+    .hero {
+        padding: 55px 0 35px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.2rem, 10vw, 3.3rem);
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .article-card {
+        border-radius: 17px;
+    }
+
+    .article-card p {
+        font-size: 0.88rem;
+        line-height: 1.9;
+    }
+
+    .featured-quote {
+        padding: 20px;
+    }
+
+    .bottom-nav {
+        flex-direction: column;
+    }
+
+    .bottom-nav a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* AKSESIBILITAS: KURANGI ANIMASI */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

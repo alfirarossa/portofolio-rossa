@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Jejak Kemanusiaan Gus Dur: Membela yang Tak Terlihat, Mendengar yang Tak Bersuara — esai karya Alfira Rossa Hartono."
+    >
+
+    <title>Jejak Kemanusiaan Gus Dur | The Writing Garden</title>
+
+    <link rel="stylesheet" href="jejak-gus-dur.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --purple-dark: #21152f;
+            --purple-main: #39234c;
+            --purple-light: #67467c;
+            --gold: #e9c875;
+            --gold-light: #f7e8b3;
+            --cream: #fff8e9;
+            --muted: #d4c8dc;
+            --glass: rgba(255, 255, 255, 0.055);
+            --glass-border: rgba(233, 200, 117, 0.22);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            min-height: 100vh;
+            color: var(--cream);
+            background:
+                radial-gradient(
+                    circle at 8% 5%,
+                    rgba(103, 70, 124, 0.28),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 95% 55%,
+                    rgba(103, 70, 124, 0.18),
+                    transparent 30%
+                ),
+                var(--purple-dark);
+            font-family: "Poppins", sans-serif;
+            line-height: 1.85;
+        }
+
+        a {
+            color: var(--gold-light);
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        .container {
+            width: min(900px, 90%);
+            margin-inline: auto;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(33, 21, 47, 0.9);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-inner {
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand {
+            color: var(--gold-light);
+            font-family: "Almendra Display", serif;
+            font-size: 1.45rem;
+            text-decoration: none;
+        }
+
+        .back-link {
+            padding: 8px 14px;
+            border: 1px solid var(--glass-border);
+            border-radius: 999px;
+            color: var(--gold-light);
+            font-size: 0.82rem;
+            text-decoration: none;
+            transition: 0.25s ease;
+        }
+
+        .back-link:hover {
+            color: var(--purple-dark);
+            background: var(--gold);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 78px 0 48px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid var(--glass-border);
+            border-radius: 999px;
+            color: var(--gold-light);
+            background: var(--glass);
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: 24px auto 20px;
+            color: var(--gold-light);
+            font-family: "Almendra Display", serif;
+            font-size: clamp(2.5rem, 6vw, 4.6rem);
+            font-weight: 400;
+            line-height: 1.15;
+        }
+
+        .hero h1 span {
+            color: var(--cream);
+        }
+
+        .subtitle {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .byline {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .byline strong {
+            color: var(--cream);
+            font-weight: 500;
+        }
+
+        .ornament {
+            margin-top: 25px;
+            color: var(--gold);
+            letter-spacing: 0.5em;
+        }
+
+        /* ARTICLE */
+        .article-section {
+            padding-bottom: 85px;
+        }
+
+        .article-card {
+            padding: clamp(24px, 5vw, 55px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.035);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .article-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            color: var(--gold);
+            font-size: 0.76rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .article-label::before {
+            content: "";
+            width: 32px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .article-card p {
+            margin-bottom: 24px;
+            color: #eee5f1;
+            font-size: 0.96rem;
+            text-align: justify;
+            overflow-wrap: anywhere;
+        }
+
+        .article-card p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .article-card p:first-of-type::first-letter {
+            float: left;
+            margin: 5px 10px 0 0;
+            color: var(--gold-light);
+            font-family: "Almendra Display", serif;
+            font-size: 3.6rem;
+            line-height: 0.85;
+        }
+
+        .featured-quote {
+            margin: 35px 0;
+            padding: 25px 28px;
+            border-left: 3px solid var(--gold);
+            border-radius: 0 16px 16px 0;
+            background: rgba(233, 200, 117, 0.07);
+        }
+
+        .featured-quote .quote-mark {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gold);
+            font-family: "Almendra Display", serif;
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+
+        .featured-quote blockquote {
+            color: var(--gold-light);
+            font-family: "Almendra Display", serif;
+            font-size: clamp(1.35rem, 3vw, 1.8rem);
+            line-height: 1.55;
+        }
+
+        .closing-note {
+            margin-top: 38px;
+            padding-top: 25px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .closing-note p {
+            margin-bottom: 0;
+            color: var(--gold-light);
+            font-family: "Almendra Display", serif;
+            font-size: 1.35rem;
+            text-align: left;
+        }
+
+        /* NAVIGATION BOTTOM */
+        .bottom-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .bottom-nav a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 17px;
+            border: 1px solid var(--glass-border);
+            border-radius: 999px;
+            color: var(--gold-light);
+            font-size: 0.82rem;
+            text-decoration: none;
+            transition: 0.25s ease;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--purple-dark);
+            background: var(--gold);
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 25px 0;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        .footer span {
+            color: var(--gold-light);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .nav-inner {
+                min-height: 65px;
+                gap: 10px;
+            }
+
+            .brand {
+                font-size: 1.15rem;
+            }
+
+            .back-link {
+                padding: 7px 10px;
+                font-size: 0.72rem;
+            }
+
+            .hero {
+                padding: 55px 0 35px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.2rem, 10vw, 3.3rem);
+            }
+
+            .subtitle {
+                font-size: 0.85rem;
+            }
+
+            .article-card {
+                border-radius: 17px;
+            }
+
+            .article-card p {
+                font-size: 0.88rem;
+                line-height: 1.9;
+            }
+
+            .featured-quote {
+                padding: 20px;
+            }
+
+            .bottom-nav {
+                flex-direction: column;
+            }
+
+            .bottom-nav a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a class="brand" href="karya.html">
+                The Writing Garden
+            </a>
+
+            <a class="back-link" href="karya.html">
+                ← Semua Karya
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <header class="hero">
+            <div class="container">
+                <span class="eyebrow">
+                    Esai Sosial · Kemanusiaan
+                </span>
+
+                <h1>
+                    Jejak Kemanusiaan Gus Dur:
+                    <span>Membela yang Tak Terlihat, Mendengar yang Tak Bersuara</span>
+                </h1>
+
+                <p class="subtitle">
+                    Sebuah refleksi tentang toleransi, keberanian moral,
+                    dan kemanusiaan yang melampaui sekat perbedaan.
+                </p>
+
+                <p class="byline">
+                    Karya oleh <strong>Alfira Rossa Hartono</strong>
+                    · SMK Negeri 1 Blitar
+                </p>
+
+                <div class="ornament" aria-hidden="true">
+                    ✧ ✦ ✧
+                </div>
+            </div>
+        </header>
+
+        <!-- ISI ESAI -->
+        <section
+            class="article-section container"
+            aria-label="Isi esai Jejak Kemanusiaan Gus Dur"
+        >
+            <article class="article-card">
+
+                <div class="article-label">
+                    Sebuah Catatan Kemanusiaan
+                </div>
+
+                <p>
+                    Ketika membicarakan sosok yang melekat dengan nilai
+                    kemanusiaan dan toleransi di Indonesia, nama Gus Dur
+                    tak pernah absen disebut. Beliau bukan hanya seorang
+                    tokoh agama atau mantan presiden, tetapi juga memberikan
+                    simbol keberanian moral, pembela kaum terpinggirkan,
+                    dan mercusuar toleransi di tengah perbedaan. Gus Dur
+                    tidak sekadar berbicara tentang kemanusiaan, beliau
+                    hidup di dalamnya. Melalui sikap, kebijakan, dan
+                    pembelaannya kepada kelompok minioritas serta rakyat
+                    kecil, beliau menunjukkan bahwa kemanusiaan bukan
+                    wacana, tetapi tindakan nyata.
+                </p>
+
+                <p>
+                    Di era ketika perbedaan sering dijadikan alasan untuk
+                    memisahkan, Gus Dur justru menjadikannya jembatan
+                    untuk memahami. Bagi Gus Dur, kemanusiaan selalu lebih
+                    tinggi nilainya dibandingkan identitas agama, suku,
+                    ataupun sosial. Pemikirannya sejalan dengan ungkapannya
+                    yang paling terkenal,
+                </p>
+
+                <figure class="featured-quote">
+                    <span class="quote-mark" aria-hidden="true">“</span>
+                    <blockquote>
+                        Tidak penting apapun agama atau sukumu, kalau kamu
+                        bisa melakukan sesuatu yang baik untuk semua orang,
+                        orang tidak akan pernah tanya agamamu.
+                    </blockquote>
+                </figure>
+
+                <p>
+                    Prinsip ini menunjukkan pandangannya bahwa martabat
+                    manusia tidak ditentukan oleh label, melainkan oleh
+                    kontribusinya terhadap sesama.
+                </p>
+
+                <p>
+                    Sikap toleransi Gus Dur tidak berhenti pada tataran
+                    teoritis. Beliau membuktikannya dengan tindakan
+                    konkret, salah satunya ketika membela hak-hak
+                    masyarakat Tionghoa. Kebijakan penghapusan Inpres
+                    No. 14 Tahun 1967 yang melarang ekspresi budaya Tionghoa,
+                    menjadi langkah penting dalam mengembalikan hak budaya
+                    mereka. Tindakan ini bukan hanya soal toleransi, tetapi
+                    pengakuan bahwa setiap manusia memiliki hak untuk
+                    menjadi dirinya sendiri.
+                </p>
+
+                <p>
+                    Nilai-nilai toleransi Gus Dur juga tercermin dalam
+                    kebiasaannya berdialog dengan semua kalangan, mulai
+                    dari pemuka agama, aktivis, hingga masyarakat adat
+                    di pelosok negeri. Beliau mendekati semua pihak tanpa
+                    sekat, mengedepankan rasa hormat, dan menunjukkan
+                    bahwa menghargai perbedaan bukan kelemahan, tetapi
+                    kekuatan dalam hidup berbangsa. Dalam pandangannya,
+                    Indonesia yang beragam hanya bisa bersatu ketika
+                    warganya saling memahami dan menghormati.
+                </p>
+
+                <p>
+                    Namun, jejak kemanusiaan Gus Dur tidak berhenti pada
+                    isu toleransi. Beliau juga dikenal sebagai pembela
+                    rakyat kecil yang tidak memiliki akses pada kekuasaan.
+                    Saat menjadi presiden, beliau memulai berbagai program
+                    yang berpihak kepada kelompok miskin dan terpinggirkan,
+                    seperti memberi perhatian pada masyarakat adat, santri
+                    di pesantren, tuna netra, hingga kelompok minioritas
+                    agama. Dalam banyak kesempatan, bahkan rela berkonflik
+                    dengan elit politik demi membela suara kelompok yang
+                    selama ini tidak terdengar.
+                </p>
+
+                <p>
+                    Salah satu kisah paling menyentuh adalah ketika Gus Dur
+                    membela komunitas penghayat kepercayan, yang selama ini
+                    terpinggirkan dan tidak diakui dalam administrasi negara.
+                    Sikapnya menunjukkan bahwa bagi Gus Dur, negara tidak
+                    harus hadir untuk semua, bukan hanya mereka yang kuat,
+                    popular, atau mayoritas.
+                </p>
+
+                <p>
+                    Relevansi nilai-nilai kemanusiaan dan toleransi Gus Dur
+                    tetap terasa hingga hari ini. Di era media sosial,
+                    perbedaan sering memicu konflik, bahkan kebencian.
+                    Saat itulah ajaran Gus Dur menjadi penting: menghormati
+                    perbedaan, menolong sesama, dan memperjuangkan
+                    kemanusiaan tanpa melihat latar belakang. Di tengah
+                    tantangan intoleransi, ujaran kebencian, dan
+                    ketidakadilan sosial, teladan Gus Dur mengingatkan kita:
+                    kemajuan bangsa tidak hanya ditentukan oleh teknologi
+                    dan ekonomi, tetapi juga oleh seberapa menusiawi kita
+                    memperlakukan satu sama lain.
+                </p>
+
+                <p>
+                    Gus Dur mungkin telah tiada, tetapi jejak kemanusiaannya
+                    abadi. Bukan pada monumen atau patung, melainkan pada
+                    tindakan-tindakan sederhana yang menghidupkan nilai
+                    kemanusiaan: membela yang lemah, menghormati yang
+                    berbeda, dan mengasihi sesama manusia. Di sanalah
+                    warisan Gus Dur sesungguhnya: bukan hanya sejarah,
+                    melainkan inspirasi untuk masa depan.
+                </p>
+
+                <div class="closing-note">
+                    <p>
+                        Membela yang lemah. Menghormati yang berbeda.
+                        Memanusiakan manusia.
+                    </p>
+                </div>
+
+            </article>
+
+            <!-- TOMBOL KEMBALI -->
+            <nav class="bottom-nav" aria-label="Navigasi halaman">
+                <a href="karya.html">
+                    ← Kembali ke Katalog Karya
+                </a>
+
+                <a href="index.html#works">
+                    Kembali ke Portofolio ↗
+                </a>
+            </nav>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                The Writing Garden ·
+                <span>Alfira Rossa Hartono</span>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

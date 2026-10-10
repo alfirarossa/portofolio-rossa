@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Kumpulan karya tulis Alfira Rossa Hartono, mulai dari esai pendidikan, tulisan kemanusiaan, hingga naskah drama sejarah."
+    >
+
+    <title>The Writing Garden | Alfira Rossa Hartono</title>
+
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --purple-dark: #21152f;
+            --purple-main: #39234c;
+            --purple-light: #67467c;
+            --gold: #e9c875;
+            --gold-light: #f7e8b3;
+            --cream: #fff8e9;
+            --muted: #d4c8dc;
+            --glass: rgba(255, 255, 255, 0.055);
+            --glass-border: rgba(233, 200, 117, 0.22);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            color: var(--cream);
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(103, 70, 124, 0.35),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 90% 75%,
+                    rgba(100, 63, 116, 0.2),
+                    transparent 35%
+                ),
+                var(--purple-dark);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid var(--gold-light);
+            outline-offset: 4px;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin-inline: auto;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(33, 21, 47, 0.88);
+            border-bottom: 1px solid var(--glass-border);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav-inner {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            font-family: "Almendra Display", serif;
+            font-size: 1.65rem;
+            color: var(--gold-light);
+            letter-spacing: 0.04em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.84rem;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .nav-links .back-link {
+            padding: 9px 15px;
+            border: 1px solid var(--glass-border);
+            border-radius: 999px;
+            color: var(--gold-light);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 90px 0 65px;
+            text-align: center;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "✦";
+            position: absolute;
+            color: var(--gold);
+            opacity: 0.55;
+            font-size: 1.4rem;
+            animation: twinkle 3s ease-in-out infinite alternate;
+        }
+
+        .hero::before {
+            top: 80px;
+            left: 12%;
+        }
+
+        .hero::after {
+            right: 13%;
+            bottom: 65px;
+            animation-delay: 1s;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 7px 15px;
+            border: 1px solid var(--glass-border);
+            border-radius: 999px;
+            color: var(--gold-light);
+            background: var(--glass);
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: 0 auto 20px;
+            font-family: "Almendra Display", serif;
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 400;
+            line-height: 1.08;
+            color: var(--gold-light);
+        }
+
+        .hero h1 span {
+            color: #ffffff;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 0.98rem;
+        }
+
+        .hero-decoration {
+            margin-top: 28px;
+            color: var(--gold);
+            letter-spacing: 0.55em;
+        }
+
+        /* COLLECTION */
+        .collection {
+            padding: 25px 0 95px;
+        }
+
+        .section-heading {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 10px;
+            font-family: "Almendra Display", serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: var(--gold-light);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .work-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 28px 24px 24px;
+            overflow: hidden;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 22px;
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(233, 200, 117, 0.6);
+            background: rgba(255, 255, 255, 0.085);
+        }
+
+        .work-number {
+            position: absolute;
+            top: 13px;
+            right: 19px;
+            font-family: "Almendra Display", serif;
+            font-size: 2.4rem;
+            color: rgba(233, 200, 117, 0.15);
+        }
+
+        .work-icon {
+            display: grid;
+            place-items: center;
+            width: 55px;
+            height: 55px;
+            margin-bottom: 24px;
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            background: rgba(233, 200, 117, 0.08);
+            font-size: 1.5rem;
+        }
+
+        .work-category {
+            margin-bottom: 12px;
+            color: var(--gold);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+        }
+
+        .work-card h3 {
+            margin-bottom: 14px;
+            color: var(--cream);
+            font-family: "Almendra Display", serif;
+            font-size: 1.65rem;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .work-card p {
+            margin-bottom: 24px;
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.85;
+        }
+
+        .work-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+            margin-bottom: 24px;
+        }
+
+        .work-tag {
+            padding: 5px 10px;
+            border: 1px solid rgba(255, 248, 233, 0.13);
+            border-radius: 999px;
+            color: #e4d9e9;
+            font-size: 0.69rem;
+        }
+
+        .work-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px 17px;
+            border: 1px solid var(--gold);
+            border-radius: 999px;
+            color: var(--gold-light);
+            font-size: 0.84rem;
+            font-weight: 500;
+            transition:
+                color 0.25s ease,
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .work-link:hover {
+            color: var(--purple-dark);
+            background: var(--gold);
+        }
+
+        .work-link span {
+            transition: transform 0.25s ease;
+        }
+
+        .work-link:hover span {
+            transform: translateX(4px);
+        }
+
+        /* NOTE */
+        .author-note {
+            max-width: 780px;
+            margin: 0 auto 85px;
+            padding: 28px;
+            border-left: 3px solid var(--gold);
+            border-radius: 0 16px 16px 0;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .author-note h2 {
+            margin-bottom: 8px;
+            font-family: "Almendra Display", serif;
+            font-size: 1.65rem;
+            font-weight: 400;
+            color: var(--gold-light);
+        }
+
+        .author-note p {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 25px 0;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        .footer span {
+            color: var(--gold-light);
+        }
+
+        /* ANIMATION */
+        @keyframes twinkle {
+            from {
+                opacity: 0.25;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 0.85;
+                transform: scale(1.15);
+            }
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .works-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .work-card:last-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .nav-inner {
+                min-height: 68px;
+                flex-wrap: wrap;
+                padding: 13px 0;
+            }
+
+            .brand {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .nav-links .back-link {
+                padding: 7px 11px;
+            }
+
+            .hero {
+                padding: 68px 0 48px;
+            }
+
+            .hero p {
+                font-size: 0.88rem;
+            }
+
+            .collection {
+                padding-bottom: 60px;
+            }
+
+            .works-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .work-card:last-child {
+                grid-column: auto;
+            }
+
+            .work-card {
+                padding: 25px 22px 22px;
+            }
+
+            .author-note {
+                margin-bottom: 60px;
+                padding: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html#works" aria-label="Kembali ke portofolio">
+                The Writing Garden
+            </a>
+
+            <nav class="nav-links" aria-label="Navigasi utama">
+                <a href="#collection">Koleksi</a>
+                <a href="#about">Tentang</a>
+                <a class="back-link" href="index.html#works">
+                    ← Portofolio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <span class="eyebrow">A little universe of words</span>
+
+                <h1 id="hero-title">
+                    The Writing <span>Garden</span>
+                </h1>
+
+                <p>
+                    Setiap tulisan menyimpan gagasan, setiap halaman
+                    membuka perspektif baru. Selamat menjelajahi
+                    kumpulan karya yang tumbuh dari rasa ingin tahu,
+                    kepedulian, dan imajinasi.
+                </p>
+
+                <div class="hero-decoration" aria-hidden="true">
+                    ✧ ✦ ✧
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="collection container"
+            id="collection"
+            aria-labelledby="collection-title"
+        >
+            <div class="section-heading">
+                <h2 id="collection-title">Kumpulan Karya</h2>
+                <p>Tiga cerita, tiga perspektif, satu ruang untuk bertumbuh.</p>
+            </div>
+
+            <div class="works-grid">
+                <!-- KARYA 1 -->
+                <article class="work-card">
+                    <span class="work-number" aria-hidden="true">01</span>
+
+                    <div class="work-icon" aria-hidden="true">✦</div>
+
+                    <span class="work-category">Esai Pendidikan · Teknologi</span>
+
+                    <h3>EduSmart AI</h3>
+
+                    <p>
+                        Optimalisasi Artificial Intelligence dalam sistem
+                        pembelajaran adaptif untuk mewujudkan pendidikan
+                        inklusif dan berdaya saing di Indonesia.
+                    </p>
+
+                    <div class="work-meta">
+                        <span class="work-tag">Artificial Intelligence</span>
+                        <span class="work-tag">Pendidikan</span>
+                        <span class="work-tag">Esai</span>
+                    </div>
+
+                    <a class="work-link" href="edusmart-ai.html">
+                        Baca karya <span aria-hidden="true">→</span>
+                    </a>
+                </article>
+
+                <!-- KARYA 2 -->
+                <article class="work-card">
+                    <span class="work-number" aria-hidden="true">02</span>
+
+                    <div class="work-icon" aria-hidden="true">❋</div>
+
+                    <span class="work-category">Esai Sosial · Kemanusiaan</span>
+
+                    <h3>Jejak Kemanusiaan Gus Dur</h3>
+
+                    <p>
+                        Membaca kembali jejak kemanusiaan Gus Dur:
+                        keberanian membela mereka yang tak terlihat dan
+                        mendengar mereka yang tak bersuara.
+                    </p>
+
+                    <div class="work-meta">
+                        <span class="work-tag">Gus Dur</span>
+                        <span class="work-tag">Toleransi</span>
+                        <span class="work-tag">Kemanusiaan</span>
+                    </div>
+
+                    <a class="work-link" href="jejak-gus-dur.html">
+                        Baca karya <span aria-hidden="true">→</span>
+                    </a>
+                </article>
+
+                <!-- KARYA 3 -->
+                <article class="work-card">
+                    <span class="work-number" aria-hidden="true">03</span>
+
+                    <div class="work-icon" aria-hidden="true">✧</div>
+
+                    <span class="work-category">Naskah Drama · Sejarah</span>
+
+                    <h3>Kerusuhan 98</h3>
+
+                    <p>
+                        Naskah drama yang mengangkat suasana dan peristiwa
+                        seputar Kerusuhan 1998 melalui adegan serta dialog
+                        para tokohnya.
+                    </p>
+
+                    <div class="work-meta">
+                        <span class="work-tag">Sejarah Indonesia</span>
+                        <span class="work-tag">Drama</span>
+                        <span class="work-tag">Naskah</span>
+                    </div>
+
+                    <a class="work-link" href="kerusuhan-98.html">
+                        Baca karya <span aria-hidden="true">→</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section
+            class="author-note container"
+            id="about"
+            aria-labelledby="author-note-title"
+        >
+            <h2 id="author-note-title">Di Balik Setiap Tulisan</h2>
+
+            <p>
+                Karya-karya ini merupakan bagian dari perjalanan belajar
+                dan berkarya. Melalui tulisan, gagasan tentang pendidikan,
+                kemanusiaan, dan sejarah diharapkan dapat menemukan
+                pembacanya serta membuka ruang untuk berpikir lebih jauh.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                Dirangkai dengan kata dan imajinasi oleh
+                <span>Alfira Rossa Hartono</span>.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

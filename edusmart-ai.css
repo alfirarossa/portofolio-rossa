@@ -1,0 +1,338 @@
+/* =========================================
+   THE WRITING GARDEN
+   Stage 2: EduSmart AI Article
+   Theme: Fairycore · Purple · Gold · Cream
+========================================= */
+
+/* 1. VARIABLES */
+:root {
+    --purple-dark: #21152f;
+    --purple-main: #39234c;
+    --purple-light: #67467c;
+    --gold: #e9c875;
+    --gold-light: #f7e8b3;
+    --cream: #fff8e9;
+    --muted: #d4c8dc;
+    --glass: rgba(255, 255, 255, 0.055);
+    --glass-border: rgba(233, 200, 117, 0.22);
+}
+
+/* 2. RESET & BASE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    color: var(--cream);
+    background:
+        radial-gradient(
+            circle at 8% 5%,
+            rgba(103, 70, 124, 0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 95% 55%,
+            rgba(103, 70, 124, 0.18),
+            transparent 30%
+        ),
+        var(--purple-dark);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.85;
+}
+
+a {
+    color: var(--gold-light);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+.container {
+    width: min(900px, 90%);
+    margin-inline: auto;
+}
+
+/* 3. NAVIGATION */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(33, 21, 47, 0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-inner {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand {
+    font-family: "Almendra Display", serif;
+    font-size: 1.45rem;
+    color: var(--gold-light);
+    text-decoration: none;
+}
+
+.back {
+    font-size: 0.82rem;
+    text-decoration: none;
+    border: 1px solid var(--glass-border);
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: 0.25s ease;
+}
+
+.back:hover {
+    background: var(--gold);
+    color: var(--purple-dark);
+}
+
+/* 4. HERO */
+.hero {
+    text-align: center;
+    padding: 72px 0 42px;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 6px 13px;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    color: var(--gold-light);
+    background: var(--glass);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin: 22px auto 20px;
+    font-family: "Almendra Display", serif;
+    font-size: clamp(2.3rem, 6vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.12;
+    color: var(--gold-light);
+    overflow-wrap: anywhere;
+}
+
+.byline {
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.byline strong {
+    color: var(--cream);
+    font-weight: 500;
+}
+
+.ornament {
+    color: var(--gold);
+    margin-top: 22px;
+    letter-spacing: 0.5em;
+}
+
+/* 5. ARTICLE LAYOUT */
+.article-shell {
+    padding-bottom: 80px;
+}
+
+article {
+    padding: clamp(23px, 5vw, 52px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.035);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* 6. ARTICLE HEADINGS */
+article .section-title {
+    color: var(--gold-light);
+    font-family: "Almendra Display", serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 42px 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+article > .section-title:first-child {
+    margin-top: 0;
+}
+
+article h3 {
+    color: var(--gold);
+    font-size: 1.12rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 30px 0 12px;
+}
+
+/* 7. ARTICLE CONTENT */
+article p {
+    color: #eee5f1;
+    font-size: 0.94rem;
+    margin-bottom: 17px;
+    overflow-wrap: anywhere;
+    text-align: left;
+}
+
+article .keywords {
+    color: var(--muted);
+    font-size: 0.83rem;
+}
+
+article strong {
+    color: var(--cream);
+}
+
+article blockquote {
+    margin: 18px 0;
+    padding: 15px 20px;
+    border-left: 3px solid var(--gold);
+    background: rgba(233, 200, 117, 0.07);
+    color: var(--gold-light);
+    font-family: "Almendra Display", serif;
+    font-size: 1.35rem;
+    line-height: 1.5;
+}
+
+/* 8. REFERENCES */
+article .reference {
+    font-size: 0.82rem;
+    padding-left: 18px;
+    text-indent: -18px;
+}
+
+article .reference a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    text-decoration: underline;
+    text-decoration-color: rgba(247, 232, 179, 0.45);
+    text-underline-offset: 3px;
+}
+
+article .reference a:hover {
+    color: var(--gold);
+}
+
+/* 9. ARTICLE FOOTER */
+.article-footer {
+    margin-top: 35px;
+    padding-top: 24px;
+    border-top: 1px solid var(--glass-border);
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+/* 10. BOTTOM NAVIGATION */
+.bottom-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.bottom-nav a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    transition: 0.25s ease;
+}
+
+.bottom-nav a:hover {
+    background: var(--gold);
+    color: var(--purple-dark);
+}
+
+/* 11. PAGE FOOTER */
+footer {
+    border-top: 1px solid var(--glass-border);
+    text-align: center;
+    padding: 23px 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+footer span {
+    color: var(--gold-light);
+}
+
+/* 12. RESPONSIVE */
+@media (max-width: 600px) {
+    .nav-inner {
+        min-height: 64px;
+        gap: 10px;
+    }
+
+    .brand {
+        font-size: 1.2rem;
+    }
+
+    .back {
+        font-size: 0.72rem;
+        padding: 7px 10px;
+        white-space: nowrap;
+    }
+
+    .hero {
+        padding: 52px 0 32px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    article {
+        border-radius: 17px;
+    }
+
+    article p {
+        font-size: 0.88rem;
+    }
+
+    article blockquote {
+        font-size: 1.2rem;
+    }
+
+    .bottom-nav {
+        flex-direction: column;
+    }
+
+    .bottom-nav a {
+        text-align: center;
+    }
+}
+
+/* 13. ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
