@@ -1230,10 +1230,83 @@ if (journeyCards.length > 0) {
 
 
                 /*
-                 * Karena ini masih website portfolio
-                 * statis, kita belum mengirim data
-                 * ke server.
+                 * Kirim data formulir ke Formspree
                  */
+
+                if (formStatus) {
+                    formStatus.textContent =
+                        "Mengirim ajakan kolaborasi...";
+                    formStatus.classList.remove(
+                        "error",
+                        "success"
+                    );
+                }
+
+                const submitButton =
+                    contactForm.querySelector(
+                        'button[type="submit"]'
+                    );
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                }
+
+                fetch(contactForm.action, {
+                    method: "POST",
+                    body: new FormData(contactForm),
+                    headers: {
+                        Accept: "application/json"
+                    }
+                })
+                .then(async function (response) {
+                    const result = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(
+                            result.errors
+                                ? result.errors
+                                    .map(function (error) {
+                                        return error.message;
+                                    })
+                                    .join(" ")
+                                : "Pesan belum berhasil dikirim."
+                        );
+                    }
+
+                    if (formStatus) {
+                        formStatus.textContent =
+                            "Ajakan kolaborasi berhasil dikirim! Terima kasih ✨";
+                        formStatus.classList.remove("error");
+                        formStatus.classList.add("success");
+                    }
+
+                    contactForm.reset();
+
+                    Object.values(fields).forEach(
+                        function (field) {
+                            clearError(field);
+                        }
+                    );
+                })
+                .catch(function (error) {
+                    if (formStatus) {
+                        formStatus.textContent =
+                            error.message ||
+                            "Terjadi kesalahan. Silakan coba lagi.";
+                        formStatus.classList.remove("success");
+                        formStatus.classList.add("error");
+                    }
+
+                    console.error(
+                        "Form submission error:",
+                        error
+                    );
+                })
+                .finally(function () {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                    }
+                });
 
                 if (formStatus) {
 
